@@ -1,21 +1,25 @@
-import { TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useNavigation } from "@react-navigation/native";
+import { Container, Footer, Form, FormInputs, Line, RegisterLink, RegisterMessage, Separator, SeparatorText, Subtitle, Title } from "./styles";
 import GoogleSvg from "../../assets/icons/google.svg"
 import FacebookSvg from "../../assets/icons/facebook.svg"
 import { Input } from "../../components/Input";
-import { ButtonSocial } from "../../components/ButtonSocial";
 import { InputPassword } from "../../components/InputPassword";
 import { ButtonGradient } from "../../components/ButtonGradient";
-import { Container, Footer, Form, FormInputs, Line, RegisterLink, RegisterMessage, Separator, SeparatorText, Subtitle, Title } from "./styles";
+import { useNavigation } from "@react-navigation/native";
+import { ButtonSocial } from "../../components/ButtonSocial";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-
-export function SignIn() {
+export function SignUp() {
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
 
   async function handleRegister() {
-    navigation.navigate("SignUp")
+    navigation.navigate("PersonalInformation");
+  }
+
+  async function handleLogin() {
+    navigation.navigate("SignIn");
   }
 
   return (
@@ -25,6 +29,16 @@ export function SignIn() {
 
       <Form>
         <FormInputs>
+          <Input
+            iconName="user"
+            placeholder="First Name"
+          />
+
+          <Input
+            iconName="user"
+            placeholder="Last Name"
+          />
+
           <Input
             iconName="mail"
             placeholder="Email"
@@ -38,9 +52,8 @@ export function SignIn() {
         </FormInputs>
 
         <ButtonGradient
-          title="Login"
-          iconName="log-in"
-          onPress={() => null}
+          title="Register"
+          onPress={handleRegister}
         />
       </Form>
 
@@ -58,8 +71,8 @@ export function SignIn() {
 
         <RegisterMessage>
           Don’t have an account yet?
-          <TouchableOpacity onPress={handleRegister}>
-            <RegisterLink> Register</RegisterLink>
+          <TouchableOpacity onPress={handleLogin}>
+            <RegisterLink> Login</RegisterLink>
           </TouchableOpacity>
         </RegisterMessage>
       </Footer>

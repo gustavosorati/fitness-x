@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
@@ -6,7 +7,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
   padding: 32px;
-  padding-bottom: 48px;
+  padding-top: 0;
   background-color: ${({theme}) => theme.colors.white};
 `;
 
@@ -17,7 +18,8 @@ export const Title = styled.Text`
 
 export const Subtitle = styled.Text`
   font-family: ${({theme}) => theme.fonts.primary_400};
-  font-size: ${RFValue(16)}px;
+  font-size: ${RFValue(12)}px;
+  color: ${({theme}) => theme.colors.gray_100};
 `;
 
 export const Form = styled.View`
@@ -32,38 +34,17 @@ export const FormInputs = styled.View`
   gap: 15px;
 `;
 
-export const Separator = styled.View`
-  width: 100%;
-  gap: 12px;
-  flex-direction: row;
+export const Unit = styled(LinearGradient)`
+  width: 48px;
+  height: 48px;
   align-items: center;
   justify-content: center;
-
-  margin: 32px 0;
+  border-radius: 14px;
 `;
 
-export const SeparatorText = styled.Text`
-  font-family: ${({theme}) => theme.fonts.primary_400};
+export const UnitText = styled.Text`
+  font-family: ${({theme}) => theme.fonts.primary_700};
   font-size: ${RFValue(12)}px;
-`;
-
-export const Line = styled.View`
-  flex: 1;
-  height: 1px;
-  background-color: ${({theme}) => theme.colors.gray_300};
-`;
-
-export const Footer = styled.View`
-  gap: 32px;
-`;
-
-export const RegisterMessage = styled.Text`
-  font-family: ${({theme}) => theme.fonts.primary_500};
-  font-size: ${RFValue(14)}px;
-`;
-
-export const RegisterLink = styled.Text`
-  font-family: ${({theme}) => theme.fonts.primary_500};
-  font-size: ${RFValue(14)}px;
-  color: ${({theme}) => theme.colors.pink_300};
+  text-transform: uppercase;
+  color: ${({theme}) => theme.colors.white};
 `;

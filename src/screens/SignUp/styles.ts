@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
@@ -6,7 +7,6 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
   padding: 32px;
-  padding-bottom: 48px;
   background-color: ${({theme}) => theme.colors.white};
 `;
 
@@ -31,6 +31,7 @@ export const FormInputs = styled.View`
   width: 100%;
   gap: 15px;
 `;
+
 
 export const Separator = styled.View`
   width: 100%;

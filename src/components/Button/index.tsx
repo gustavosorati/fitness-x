@@ -1,12 +1,14 @@
 import { TouchableHighlightProps } from "react-native";
 import { Container, Placeholder } from "./styles";
 
-interface Props extends TouchableHighlightProps {}
+interface Props extends TouchableHighlightProps {
+  title: string;
+}
 
-export function Button({ ...rest }: Props) {
+export function Button({ title, ...rest }: Props) {
   return (
-    <Container onPress={() => null} {...rest}>
-      <Placeholder>Get started</Placeholder>
+    <Container {...rest}>
+      <Placeholder>{title}</Placeholder>
     </Container>
   )
 }
