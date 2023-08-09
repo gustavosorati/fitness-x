@@ -6,6 +6,8 @@ import { GetStarted } from '../screens/Onboarding/GetStarted';
 import { PersonalInformation } from '../screens/SignUp/components/PersonalInformation';
 import { YourGoal } from '../screens/SignUp/components/YourGoal';
 import { SuccessRegister } from '../screens/SignUp/components/SuccessRegister';
+import { Home } from '../screens/Home';
+import { BottomRoutes } from './bottom.routes';
 
 
 type AuthParams = {
@@ -14,6 +16,8 @@ type AuthParams = {
     PersonalInformation: undefined;
     YourGoal: undefined;
     SuccessRegister: undefined;
+
+    Home: undefined;
 
     GetStarted: undefined;
     Onboarding: undefined;
@@ -36,7 +40,7 @@ export function AuthRoutes() {
 
       <Stack.Screen name="SignIn" component={SignIn} />
 
-
+      <Stack.Screen name="Home" component={BottomRoutes} />
     </Stack.Navigator>
   );
 }

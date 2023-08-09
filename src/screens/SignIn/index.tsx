@@ -40,7 +40,7 @@ export function SignIn() {
         <ButtonGradient
           title="Login"
           iconName="log-in"
-          onPress={() => null}
+          onPress={() => navigation.navigate("Home")}
         />
       </Form>
 
