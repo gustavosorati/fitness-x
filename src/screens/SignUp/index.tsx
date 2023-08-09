@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Container, Footer, Form, FormInputs, Line, RegisterLink, RegisterMessage, Separator, SeparatorText, Subtitle, Title } from "./styles";
 import GoogleSvg from "../../assets/icons/google.svg"
@@ -24,6 +24,7 @@ export function SignUp() {
 
   return (
     <Container style={{ paddingTop: insets.top }}>
+      <ScrollView style={{ flex: 1, width: "100%", padding: 32 }}>
       <Subtitle>Hey there,</Subtitle>
       <Title>Create an Account</Title>
 
@@ -76,6 +77,7 @@ export function SignUp() {
           </TouchableOpacity>
         </RegisterMessage>
       </Footer>
+      </ScrollView>
     </Container>
   )
 }
