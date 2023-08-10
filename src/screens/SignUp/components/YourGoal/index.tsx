@@ -1,10 +1,11 @@
-import { Dimensions, Image, Text, View } from "react-native";
+import { Dimensions, Platform, View } from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Container, Form, FormInputs, Subtitle, Title } from "./styles";
+import { Container, Subtitle, Title } from "./styles";
 import { ButtonGradient } from "../../../../components/ButtonGradient";
-import Animated, { Extrapolate, interpolate, useAnimatedScrollHandler, useAnimatedStyle, useSharedValue } from "react-native-reanimated";
+import Animated, { useAnimatedScrollHandler, useSharedValue } from "react-native-reanimated";
 import { GoalCard } from "../GoalCard/inde";
 import { useNavigation } from "@react-navigation/native";
+import { AuthParamsList } from "../../../../routes/auth.routes";
 
 const SLIDES = [
   { id: 0, key: "left" },
@@ -29,7 +30,7 @@ const SPACER_ITEM = (Dimensions.get("window").width - 275) / 2
 export function YourGoal() {
   const insets = useSafeAreaInsets();
   const scrollX = useSharedValue(0);
-  const navigation = useNavigation();
+  const navigation = useNavigation<AuthParamsList>();
 
   const scrollHandler = useAnimatedScrollHandler({
     onScroll: (event) => {
@@ -42,7 +43,8 @@ export function YourGoal() {
   }
 
   return (
-    <Container style={{ paddingTop: insets.top }}>
+    <Container style={{ paddingTop: Platform.OS === "android" ? 24 : insets.top }}>
+
       <View style={{ alignItems: "center", paddingHorizontal: 32 }}>
         <Title>What is your goal ?</Title>
         <Subtitle>It will help us to choose a {"\n"} best program for you</Subtitle>
@@ -53,7 +55,7 @@ export function YourGoal() {
         keyExtractor={(item) => String(item.id)}
         horizontal
         contentContainerStyle={{
-          marginTop: 50,
+          marginTop: 24,
         }}
         renderItem={({item, index}) => {
           return (
@@ -75,11 +77,13 @@ export function YourGoal() {
         scrollEventThrottle={16}
       />
 
-      <ButtonGradient
-        title="Confirm"
-        onPress={handleSubmit}
-        style={{ paddingHorizontal: 32 }}
-      />
+      <View style={{ flex: 1, width: "100%" }}>
+        <ButtonGradient
+          title="Confirm"
+          onPress={handleSubmit}
+          style={{ paddingHorizontal: 32 }}
+        />
+      </View>
     </Container>
   )
 }

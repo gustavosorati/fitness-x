@@ -2,10 +2,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
   flex: 1;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   padding: 32px;
   padding-top: 0;
   background-color: ${({theme}) => theme.colors.white};
@@ -25,13 +24,13 @@ export const Subtitle = styled.Text`
 export const Form = styled.View`
   flex: 1;
   width: 100%;
+  gap: 24px;
   margin-top: 30px;
 `;
 
 export const FormInputs = styled.View`
-  flex: 1;
   width: 100%;
-  gap: 15px;
+  gap: 16px;
 `;
 
 export const Unit = styled(LinearGradient)`

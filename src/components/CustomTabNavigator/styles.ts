@@ -9,7 +9,7 @@ export const Container = styled.View`
   justify-content: space-between;
 `;
 
-export const ButtonNavigation = styled.Pressable`
+export const ButtonNavigation = styled.TouchableOpacity`
   flex: 1;
   height: 100%;
   align-items: center;

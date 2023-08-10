@@ -9,10 +9,11 @@ import { ButtonGradient } from "../../components/ButtonGradient";
 import { useNavigation } from "@react-navigation/native";
 import { ButtonSocial } from "../../components/ButtonSocial";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { AuthParamsList } from "../../routes/auth.routes";
 
 export function SignUp() {
   const insets = useSafeAreaInsets();
-  const navigation = useNavigation();
+  const navigation = useNavigation<AuthParamsList>();
 
   async function handleRegister() {
     navigation.navigate("PersonalInformation");
@@ -24,7 +25,7 @@ export function SignUp() {
 
   return (
     <Container style={{ paddingTop: insets.top }}>
-      <ScrollView style={{ flex: 1, width: "100%", padding: 32 }}>
+      <ScrollView style={{ flex: 1, width: "100%", padding: 32 }} showsVerticalScrollIndicator={false}>
       <Subtitle>Hey there,</Subtitle>
       <Title>Create an Account</Title>
 
@@ -70,12 +71,15 @@ export function SignUp() {
           <ButtonSocial icon={FacebookSvg} />
         </View>
 
-        <RegisterMessage>
-          Don’t have an account yet?
+        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+          <RegisterMessage>
+            Don’t have an account yet?
+          </RegisterMessage>
+
           <TouchableOpacity onPress={handleLogin}>
-            <RegisterLink> Login</RegisterLink>
-          </TouchableOpacity>
-        </RegisterMessage>
+              <RegisterLink> Login</RegisterLink>
+            </TouchableOpacity>
+        </View>
       </Footer>
       </ScrollView>
     </Container>

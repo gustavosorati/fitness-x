@@ -1,12 +1,7 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
-export const Container = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-  padding-bottom: 48px;
+export const Container = styled.ScrollView`
   background-color: ${({theme}) => theme.colors.white};
 `;
 
@@ -21,9 +16,10 @@ export const Subtitle = styled.Text`
 `;
 
 export const Form = styled.View`
-  flex: 1;
+  flex: 2;
   width: 100%;
   margin-top: 30px;
+  gap: 32px;
 `;
 
 export const FormInputs = styled.View`

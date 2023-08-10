@@ -55,6 +55,8 @@ export const Line = styled.View`
 
 export const Footer = styled.View`
   gap: 32px;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const RegisterMessage = styled.Text`

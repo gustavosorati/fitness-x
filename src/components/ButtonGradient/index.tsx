@@ -18,6 +18,7 @@ export function ButtonGradient({ title, iconName, ...rest }: Props) {
         shadowOffset: {width: -2, height: 4},
         shadowOpacity: 0.9,
         shadowRadius: 20,
+        elevation: 10
       }}
       {...rest}
     >

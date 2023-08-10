@@ -7,7 +7,6 @@ export const Container = styled.View`
   align-items: center;
   justify-content: space-between;
   background-color: ${({theme}) => theme.colors.white};
-  padding-bottom: 48px;
 `;
 
 export const Title = styled.Text`
@@ -25,7 +24,7 @@ export const Subtitle = styled.Text`
 export const Form = styled.View`
   flex: 1;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 24px;
 `;
 
 export const FormInputs = styled.View`

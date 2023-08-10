@@ -8,7 +8,6 @@ export function SleepIndicator() {
   const lineData3 = [{ value: 0 }, { value: 5.4 }, { value: 0 }, { value: 5.4 }]
   const lineData4 = [{ value: 5 }, { value: 0 }, { value: 5 }, { value: 0 }]
   const lineData5 = [{ value: 4.6 }, { value: 0 }, { value: 4.6 }, { value: 0 }]
-  const lineData6 = [{ value: 5.4 }, { value: 0 }, { value: 5.4 }, { value: 0 }]
 
   return (
     <Container
@@ -17,6 +16,7 @@ export function SleepIndicator() {
         shadowRadius: 50,
         shadowOpacity: .1,
         shadowOffset: { width: -10, height: 0 },
+        elevation: 10
       }}
     >
       <Title>Sleep</Title>

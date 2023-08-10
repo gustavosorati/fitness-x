@@ -1,23 +1,26 @@
-import { Dimensions, View } from "react-native";
+import { Dimensions, KeyboardAvoidingView, Platform, View } from "react-native";
 import { Container, Form, FormInputs, Subtitle, Title, Unit, UnitText } from "./styles";
 import { Input } from "../../../../components/Input";
-import { InputPassword } from "../../../../components/InputPassword";
 import { ButtonGradient } from "../../../../components/ButtonGradient";
 import RegisterSvg from "../../../../assets/register_01.svg";
 import { useNavigation } from "@react-navigation/native";
+import { AuthParamsList } from "../../../../routes/auth.routes";
 
 const DEVICE_WIDTH = Dimensions.get("window").width;
 const IMAGE_PROPORTION = 1.071;
 
 export function PersonalInformation() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<AuthParamsList>();
 
   async function handleRegister() {
     navigation.navigate("YourGoal")
   }
 
   return (
-    <Container>
+    <Container
+      contentContainerStyle={{ paddingBottom: 32 }}
+      showsVerticalScrollIndicator={false}
+    >
       <RegisterSvg
         width="100%"
         height={DEVICE_WIDTH / IMAGE_PROPORTION}
@@ -46,10 +49,7 @@ export function PersonalInformation() {
               />
             </View>
 
-            <Unit
-              start={{ x: .1, y: .2 }}
-              colors={["#C58BF2", "#EEA4CE"]}
-            >
+            <Unit start={{ x: .1, y: .2 }} colors={["#C58BF2", "#EEA4CE"]}>
               <UnitText>kg</UnitText>
             </Unit>
           </View>

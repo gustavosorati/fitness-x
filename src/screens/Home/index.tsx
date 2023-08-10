@@ -8,6 +8,7 @@ import { BodyMassIndex } from "./components/BodyMassIndex";
 import { WaterIntake } from "./components/WaterIntake";
 import { SleepIndicator } from "./components/SleepIndicator";
 import SVG, { Circle, Path } from "react-native-svg"
+import { Input } from "../../components/Input";
 
 export function Home() {
   const theme = useTheme();
@@ -36,7 +37,9 @@ export function Home() {
       <Container
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
-          paddingBottom: 32
+          paddingBottom: 40,
+          padding: 32,
+          paddingTop: 16
         }}
       >
         <Header />
@@ -128,6 +131,8 @@ export function Home() {
               </LinearGradient>
             </ChartContainer>
           </Section>
+
+          <Input />
 
           <Section style={{ flexDirection: "row", justifyContent: "space-between" }}>
             <WaterIntake />

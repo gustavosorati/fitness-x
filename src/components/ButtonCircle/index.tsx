@@ -33,9 +33,7 @@ export function ButtonCircle({
   }, [progress])
 
   return (
-    <Container
-      {...rest}
-    >
+    <Container {...rest}>
       <SVG style={{ position: "absolute" }}>
         <AnimatedCircle
           animatedProps={animatedProps}

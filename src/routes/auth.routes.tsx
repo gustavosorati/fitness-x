@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
 import { SignIn } from '../screens/SignIn';
 import { SignUp } from '../screens/SignUp';
 import { OnboardingInfo } from '../screens/Onboarding/Info';
@@ -8,6 +8,7 @@ import { YourGoal } from '../screens/SignUp/components/YourGoal';
 import { SuccessRegister } from '../screens/SignUp/components/SuccessRegister';
 import { Home } from '../screens/Home';
 import { BottomRoutes } from './bottom.routes';
+import { Notification } from '../screens/Notification';
 
 
 type AuthParams = {
@@ -21,7 +22,11 @@ type AuthParams = {
 
     GetStarted: undefined;
     Onboarding: undefined;
+
+    Notifications: undefined;
 }
+
+export type AuthParamsList = StackNavigationProp<AuthParams>;
 
 const Stack = createStackNavigator<AuthParams>();
 
@@ -39,8 +44,9 @@ export function AuthRoutes() {
       <Stack.Screen name="SuccessRegister" component={SuccessRegister} />
 
       <Stack.Screen name="SignIn" component={SignIn} />
-
       <Stack.Screen name="Home" component={BottomRoutes} />
+
+      <Stack.Screen name="Notifications" component={Notification} />
     </Stack.Navigator>
   );
 }

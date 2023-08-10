@@ -3,10 +3,11 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Container, Subtitle, Title } from "./styles";
 import { Button } from "../../../components/Button";
 import { useNavigation } from "@react-navigation/native";
+import { AuthParamsList } from "../../../routes/auth.routes";
 
 export function GetStarted() {
   const insets = useSafeAreaInsets();
-  const navigation = useNavigation();
+  const navigation = useNavigation<AuthParamsList>();
 
   function handleInitOnboarding() {
     navigation.navigate("Onboarding");
@@ -23,7 +24,10 @@ export function GetStarted() {
         <Subtitle>Everybody Can Train</Subtitle>
       </View>
 
-      <Button title="Get Started" onPress={handleInitOnboarding}/>
+      <Button
+        title="Get Started"
+        onPress={handleInitOnboarding}
+      />
     </Container>
   )
 }

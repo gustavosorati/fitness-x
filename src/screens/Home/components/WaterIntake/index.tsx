@@ -18,6 +18,7 @@ export function WaterIntake({ water = 1000 }: Props) {
           width: -10,
           height: 0,
         },
+        elevation: 10
       }}
     >
       <Bar>
