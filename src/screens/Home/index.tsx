@@ -132,13 +132,10 @@ export function Home() {
             </ChartContainer>
           </Section>
 
-          <Input />
-
           <Section style={{ flexDirection: "row", justifyContent: "space-between" }}>
             <WaterIntake />
 
             <View style={{ height: "100%", justifyContent: "space-between" }}>
-              <SleepIndicator />
               <SleepIndicator />
             </View>
           </Section>
